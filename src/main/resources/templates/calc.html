@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+<form action="/calculator/calc" method="post">
+    <input type="text" name="num1" placeholder="Num1">
+    <input type="text" name="num2" placeholder="Num2">
+    <select name="operation" class="form-select" aria-label="Default select example">
+        <option value="sum" >+</option>
+        <option value="diff">-</option>
+        <option value="mul">*</option>
+        <option value="div">/</option>
+    </select>
+    <button>Calculate</button>
+</form>
+<p th:text="${result}"></p>
+</body>
+</html>
