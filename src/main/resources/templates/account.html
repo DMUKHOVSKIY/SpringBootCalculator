@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Account</title>
+</head>
+<body>
+<p><b th:text="${'Name: '+ session.currentUser}"></b></p>
+<a href="/user/changeName">Change name</a>
+<br>
+<a href="/user/changePassword">Change password</a>
+</body>
+</html>

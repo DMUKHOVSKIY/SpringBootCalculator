@@ -2,18 +2,23 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>History</title>
 </head>
 <body>
-<form th:action="@{/user/login}" method="post" th:object="${userModel}">
+<form th:action="@{/calculator/history}" method="post" th:object="${username}">
     <input th:field="*{username}" placeholder="Username">
     <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
     <br>
-    <input th:field="*{password}" placeholder="Password">
-    <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
-    <br>
     <button>Submit</button>
 </form>
-<p th:text="${message}"></p>
+
+<ul th:if="${!#lists.isEmpty(operations)}">
+    <li th:each="value: ${operations}" th:text="${value}"></li>
+</ul>
+
+
+<p th:if="${#lists.isEmpty(operations)}">There are no operations of this user</p>
+
+
 </body>
 </html>

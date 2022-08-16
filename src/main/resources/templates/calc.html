@@ -1,13 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Calculator</title>
 </head>
 <body>
+<!--<form th:action="@{/calculator/calc}" method="post" th:object="${operation}">-->
+<!--    <input th:field="*{num1}" placeholder="Num1">-->
+<!--    <p th:if="${#fields.hasErrors('num1')}" th:errors="*{num1}"></p>-->
+<!--    <br>-->
+<!--    <input th:field="*{num2}" placeholder="Num2">-->
+<!--    <p th:if="${#fields.hasErrors('num2')}" th:errors="*{num2}"></p>-->
+<!--    <br>-->
+<!--    <select class="form-select" th:field="*{operation}" placeholder="Operation">-->
+<!--        <option value="sum" >+</option>-->
+<!--        <option value="diff">-</option>-->
+<!--        <option value="mul">*</option>-->
+<!--        <option value="div">/</option>-->
+<!--    </select>-->
+<!--    <p th:if="${#fields.hasErrors('operation')}" th:errors="*{operation}"></p>-->
+<!--    <br>-->
+<!--    <button>Calculate</button>-->
+<!--</form>-->
 <form action="/calculator/calc" method="post">
-    <input type="text" name="num1" placeholder="Num1">
-    <input type="text" name="num2" placeholder="Num2">
+    <input type="text" name="num1" placeholder="Num1" required>
+    <input type="text" name="num2" placeholder="Num2" required>
     <select name="operation" class="form-select" aria-label="Default select example">
         <option value="sum" >+</option>
         <option value="diff">-</option>
